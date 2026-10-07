@@ -8,17 +8,20 @@
 @font-face { font-family: "Source Sans 3"; font-weight: 600; font-display: swap; src: url("fonts/source-sans-3-latin-600-normal.woff2") format("woff2"); }
 
 :root {
-  --bg: #f5f7f6;
+  /* Farben nach dem Logo: Blau #324384, Grau #595959 */
+  --bg: #f6f7fa;
   --surface: #ffffff;
-  --band: #e6eeec;
-  --fg: #16252a;
-  --muted: #4d6066;
-  --line: #cfdcd9;
-  --accent: #1f5c57;
+  --band: #e8ebf4;
+  --fg: #171c2c;
+  --muted: #555a66;
+  --line: #d2d7e6;
+  --accent: #324384;
   --accent-fg: #ffffff;
-  --signal: #b8741f;
+  --signal: #b3261e;
   --ph-bg: #fff1b8;
   --ph-fg: #5a4300;
+  --neu-bg: #ffd7a8;
+  --neu-fg: #5c2a00;
 
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -36,15 +39,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0f1a1c; --surface: #152427; --band: #132225; --fg: #e3ecea; --muted: #9fb3b2;
-    --line: #2a3e41; --accent: #6fc2b8; --accent-fg: #0b1716; --signal: #e0a458;
-    --ph-bg: #4a3c08; --ph-fg: #ffe9a3; color-scheme: dark;
+    --bg: #10131c; --surface: #171b27; --band: #141824; --fg: #e4e7f0; --muted: #a3a9b8;
+    --line: #2b3142; --accent: #9aaaf0; --accent-fg: #10131c; --signal: #ff8a80;
+    --ph-bg: #4a3c08; --ph-fg: #ffe9a3; --neu-bg: #5c3108; --neu-fg: #ffd6ad; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0f1a1c; --surface: #152427; --band: #132225; --fg: #e3ecea; --muted: #9fb3b2;
-  --line: #2a3e41; --accent: #6fc2b8; --accent-fg: #0b1716; --signal: #e0a458;
-  --ph-bg: #4a3c08; --ph-fg: #ffe9a3; color-scheme: dark;
+  --bg: #10131c; --surface: #171b27; --band: #141824; --fg: #e4e7f0; --muted: #a3a9b8;
+  --line: #2b3142; --accent: #9aaaf0; --accent-fg: #10131c; --signal: #ff8a80;
+  --ph-bg: #4a3c08; --ph-fg: #ffe9a3; --neu-bg: #5c3108; --neu-fg: #ffd6ad; color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -76,13 +79,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Platzhalter: deutlich gelb markiert, damit nichts davon online geht */
 .ph { background: var(--ph-bg); color: var(--ph-fg); padding: 0 0.25em; border-radius: 3px; font-style: normal; }
+/* Von der alten Website übernommen: orange markiert, bitte prüfen und danach die Markierung entfernen */
+.neu { background: var(--neu-bg); color: var(--neu-fg); padding: 0 0.25em; border-radius: 3px; }
+.neu a { color: inherit; }
 
 /* Kopfzeile */
 .site-header { background: var(--surface); border-bottom: 1px solid var(--line); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 0.8rem; }
-.brand { display: flex; flex-direction: column; text-decoration: none; color: var(--fg); }
+.brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--fg); }
+.brand-logo { height: 2.75rem; width: auto; }
+.brand-text { display: flex; flex-direction: column; }
+/* Logo ist dunkelblau: im dunklen Modus auf hellem Grund zeigen */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand-logo { background: #fff; border-radius: 6px; padding: 0.2rem; } }
+:root[data-theme="dark"] .brand-logo { background: #fff; border-radius: 6px; padding: 0.2rem; }
 .brand strong { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; }
-.brand span { font-size: var(--step--1); color: var(--muted); }
+.brand-text > span { font-size: var(--step--1); color: var(--muted); }
 .nav { display: flex; gap: 0.25rem 1.25rem; flex-wrap: wrap; }
 .nav a { color: var(--fg); text-decoration: none; font-weight: 600; font-size: var(--step--1); padding-block: 0.25rem; }
 .nav a:hover { color: var(--accent); }
@@ -124,6 +135,10 @@ section.band { background: var(--band); }
 .about { display: grid; gap: 2.5rem; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); align-items: start; }
 .portrait { aspect-ratio: 4 / 5; max-width: 100%; border-radius: var(--radius); background: var(--band); border: 1px dashed var(--line); display: grid; place-items: center; text-align: center; color: var(--muted); font-size: var(--step--1); padding: 1rem; }
 section.band .portrait { background: var(--surface); }
+.portrait-foto { aspect-ratio: auto; background: none; border: 0; padding: 0; max-width: 14rem; }
+section.band .portrait-foto { background: none; }
+.portrait-foto img { display: block; width: 100%; height: auto; }
+.portrait-foto.neu, section.band .portrait-foto.neu { background: var(--neu-bg); padding: 0.5rem; border-radius: var(--radius); }
 .about-text { display: grid; gap: 1rem; max-width: 40rem; }
 .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 1rem; margin-top: 0.5rem; }
 .facts div { border-top: 2px solid var(--accent); padding-top: 0.5rem; }
