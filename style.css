@@ -20,8 +20,8 @@
   --signal: #b3261e;
   --ph-bg: #fff1b8;
   --ph-fg: #5a4300;
-  --neu-bg: #ffd7a8;
-  --neu-fg: #5c2a00;
+  --neu-bg: #ffa040;
+  --neu-fg: #2e1400;
 
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -41,13 +41,13 @@
   :root:not([data-theme="light"]) {
     --bg: #10131c; --surface: #171b27; --band: #141824; --fg: #e4e7f0; --muted: #a3a9b8;
     --line: #2b3142; --accent: #9aaaf0; --accent-fg: #10131c; --signal: #ff8a80;
-    --ph-bg: #4a3c08; --ph-fg: #ffe9a3; --neu-bg: #5c3108; --neu-fg: #ffd6ad; color-scheme: dark;
+    --ph-bg: #e3c53c; --ph-fg: #1f1800; --neu-bg: #f08a24; --neu-fg: #1f0e00; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #10131c; --surface: #171b27; --band: #141824; --fg: #e4e7f0; --muted: #a3a9b8;
   --line: #2b3142; --accent: #9aaaf0; --accent-fg: #10131c; --signal: #ff8a80;
-  --ph-bg: #4a3c08; --ph-fg: #ffe9a3; --neu-bg: #5c3108; --neu-fg: #ffd6ad; color-scheme: dark;
+  --ph-bg: #e3c53c; --ph-fg: #1f1800; --neu-bg: #f08a24; --neu-fg: #1f0e00; color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -80,7 +80,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Platzhalter: deutlich gelb markiert, damit nichts davon online geht */
 .ph { background: var(--ph-bg); color: var(--ph-fg); padding: 0 0.25em; border-radius: 3px; font-style: normal; }
 /* Von der alten Website übernommen: orange markiert, bitte prüfen und danach die Markierung entfernen */
-.neu { background: var(--neu-bg); color: var(--neu-fg); padding: 0 0.25em; border-radius: 3px; }
+.neu { background: var(--neu-bg); color: var(--neu-fg); padding: 0 0.25em; border-radius: 3px; box-shadow: 0 0 0 1px #c25e00; }
 .neu a { color: inherit; }
 
 /* Kopfzeile */
