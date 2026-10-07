@@ -9,13 +9,14 @@
 
 :root {
   /* Farben nach dem Logo: Blau #324384, Grau #595959 */
-  --bg: #f6f7fa;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --band: #e8ebf4;
-  --fg: #171c2c;
-  --muted: #555a66;
-  --line: #d2d7e6;
+  --band: #eef0f7;
+  --fg: #2b2b2b;
+  --muted: #595959;
+  --line: #dde0ea;
   --accent: #324384;
+  --heading: #324384;
   --accent-fg: #ffffff;
   --signal: #b3261e;
   --ph-bg: #fff1b8;
@@ -40,13 +41,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #10131c; --surface: #171b27; --band: #141824; --fg: #e4e7f0; --muted: #a3a9b8;
-    --line: #2b3142; --accent: #9aaaf0; --accent-fg: #10131c; --signal: #ff8a80;
+    --line: #2b3142; --accent: #9aaaf0; --heading: #b4c0f5; --accent-fg: #10131c; --signal: #ff8a80;
     --ph-bg: #e3c53c; --ph-fg: #1f1800; --neu-bg: #f08a24; --neu-fg: #1f0e00; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #10131c; --surface: #171b27; --band: #141824; --fg: #e4e7f0; --muted: #a3a9b8;
-  --line: #2b3142; --accent: #9aaaf0; --accent-fg: #10131c; --signal: #ff8a80;
+  --line: #2b3142; --accent: #9aaaf0; --heading: #b4c0f5; --accent-fg: #10131c; --signal: #ff8a80;
   --ph-bg: #e3c53c; --ph-fg: #1f1800; --neu-bg: #f08a24; --neu-fg: #1f0e00; color-scheme: dark;
 }
 
@@ -63,7 +64,7 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1, h2, h3 { color: var(--heading); font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
 h1 { font-size: var(--step-3); font-weight: 700; letter-spacing: -0.01em; }
 h2 { font-size: var(--step-2); font-weight: 700; }
 h3 { font-size: var(--step-1); font-weight: 600; }
@@ -84,7 +85,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .neu a { color: inherit; }
 
 /* Kopfzeile */
-.site-header { background: var(--surface); border-bottom: 1px solid var(--line); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; }
+.site-header { background: var(--surface); border-bottom: 3px solid var(--accent); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 0.8rem; }
 .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--fg); }
 .brand-logo { height: 2.75rem; width: auto; }
