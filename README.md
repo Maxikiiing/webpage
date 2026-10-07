@@ -7,12 +7,15 @@ Reine HTML/CSS-Seite ohne Build-Schritt. Läuft auf GitHub Pages und lässt sich
 - `impressum.html` – Impressum (§ 5 DDG, inkl. Makler-Pflichtangaben)
 - `erstinformation.html` – Statusinformation nach § 15 VersVermV
 - `datenschutz.html` – Datenschutzerklärung (GitHub Pages + Formspree)
-- `style.css` – Design, Farben, Schriften
+- `style.css` – Design, Farben (nach dem Logo: Blau #324384), Schriften
+- `bilder/` – Logo-Zeichen (`nk-logo.png`), Favicon und Porträtfoto, alle aus der alten Website ausgeschnitten. Das Foto ist klein (194 × 226 px); ein schärferes Foto wäre besser.
 - `fonts/` – Schriften lokal eingebunden (Bricolage Grotesque, Source Sans 3, OFL-Lizenz), damit keine Daten an Google gehen
 
 ## Platzhalter ausfüllen
 Alle offenen Stellen sind auf der Seite **gelb markiert** (`<span class="ph">[…]</span>`). Beim Ersetzen das `span` mit entfernen.
 Suche in allen Dateien nach `class="ph"`.
+
+**Orange markiert** (`<span class="neu">…</span>`) sind Angaben, die von der alten Website (makler-kunzmann.de) übernommen wurden: Name, Anschrift, Telefon, Fax, E-Mail, IHK, Registernummern (§ 34d und § 34f), Berufshaftpflicht, Schlichtungsstellen, Region, Foto. Bitte prüfen, ob sie noch stimmen, und danach das `span` (bzw. beim Foto die Klasse `neu`) entfernen. Suche nach `neu`.
 
 | Angabe | Wo |
 |---|---|
@@ -22,7 +25,6 @@ Suche in allen Dateien nach `class="ph"`.
 | Telefon, E-Mail | Kontakt, Impressum, Erstinformation, Datenschutz |
 | Ort / Region | Startseite (Einstieg, Über mich) |
 | Werdegang, Jahre Erfahrung, Qualifikation | Über mich |
-| Foto (Hochformat 4:5) | Über mich |
 | Zuständige IHK (Erlaubnisbehörde) | Impressum, Erstinformation |
 | Vermittlerregister-Nr. (D-XXXX-XXXXX-XX) | Impressum, Erstinformation, Fußzeile |
 | USt-IdNr. (falls vorhanden, sonst Abschnitt löschen) | Impressum |
